@@ -1,17 +1,17 @@
-var employers = ['АртеМ', 'максим', 'Владимир', 'сергей', 'НикиТа', 'евГений', ' Дарья', ' ', 'виктория ', 'ЕкаТерина', '', ' Андрей ', 'КИРИЛЛ'];
-var nameCourse = 'Базовый React';
-var command = [];
-for (var i = 0; i < employers.length; i++) {
+const employers = ['АртеМ', 'максим', 'Владимир', 'сергей', 'НикиТа', 'евГений', ' Дарья', ' ', 'виктория ', 'ЕкаТерина', '', ' Андрей ', 'КИРИЛЛ'];
+const nameCourse = 'Базовый React';
+const command = [];
+for (let i = 0; i < employers.length; i++) {
 	if (employers[i].length > 0 && employers[i].trim() != '') {
 		command.push(employers[i]);
 	}
 }
-for (var i = 0; i < command.length; i++) {
+for (let i = 0; i < command.length; i++) {
 	command[i] = command[i].toLowerCase().trim();
 	command[i] = command[i][0].toUpperCase() + command[i].slice(1);
 }
 
-var data = {
+const data = {
 	cash: [3, 8, 3],
 	react: ['JSX', 'components', 'props', 'state', 'hooks'],
 	add: ['styled-components', 'firebase']
@@ -19,15 +19,15 @@ var data = {
 
 function calcCash(own) {
 	own = own || 0;
-	var everyCash = Array.prototype.slice.call(arguments);
-	var total = own;
-	for (var i = 0; i < everyCash[1].length; i++) {
+	const everyCash = Array.prototype.slice.call(arguments);
+	const total = own;
+	for (let i = 0; i < everyCash[1].length; i++) {
 		total += +everyCash[1][i];
 	}
 	return total;
 }
 
-var lesson = calcCash(null, data.cash);
+const lesson = calcCash(null, data.cash);
 
 function makeBusiness(director, teacher, allModule, gang, course) {
 	teacher = teacher || 'Максим';
