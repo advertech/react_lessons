@@ -1,3 +1,5 @@
+'use strict';
+
 const employers = ['АртеМ', 'максим', 'Владимир', 'сергей', 'НикиТа', 'евГений', ' Дарья', ' ', 'виктория ', 'ЕкаТерина', '', ' Андрей ', 'КИРИЛЛ'];
 const nameCourse = 'Базовый React';
 const command = [];
@@ -20,7 +22,7 @@ const data = {
 function calcCash(own) {
 	own = own || 0;
 	const everyCash = Array.prototype.slice.call(arguments);
-	const total = own;
+	let total = own;
 	for (let i = 0; i < everyCash[1].length; i++) {
 		total += +everyCash[1][i];
 	}
@@ -37,7 +39,23 @@ function makeBusiness(director, teacher, allModule, gang, course) {
 	console.log('Первое что изучим будет ' + data.react[0] + ". Он очень похож на HTML!");
 	console.log('Технологии которые мы изучим: ');
 	console.log.apply(null, sumTech);
+	console.log('TH END')
+
+}
+const makeBusiness2 = (director, teacher, allModule, gang, course) => {
+	teacher = teacher || 'Максим';
+	let sumTech = data.react.concat(data.add, ' и другие');
+	const tempstr = `Стартуем новый курс: "${course}"
+	Владелец: ${director} 
+	преподаватель: ${teacher} 
+	Всего уроков: ${allModule}
+	Команда Академии: ${gang}
+	Первое что изучим будет ${data.react[0]} Он очень похож на HTML!
+	Технологии которые мы изучим: ${sumTech}`;
+	console.log(tempstr)
 
 }
 
+
 makeBusiness.apply(null, ['Артем', null, lesson, command, nameCourse]);
+makeBusiness2.apply(null, ['Артем', null, lesson, command, nameCourse]);

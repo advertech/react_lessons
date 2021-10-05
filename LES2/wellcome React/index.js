@@ -19,15 +19,25 @@
 // ReactDOM.render(render, document.getElementById('root'))
 
 // тоже самое на JSD  - надо прогнать через Бабель
+const imja = 'Simon';
+
+const red = {
+    color: '#fff000',
+    fontSize: 30 + 'px'
+};
+
+const alertHello = () => (
+    alert("HEllo It's Allert function")
+)
 
 const renderJSX = (
     <div>
         <header>
             <img className='logo' src="logo.svg" alt="ReactLogo" />
-            <h1>Priver React</h1>
+            <h1 style={red} onClick={alertHello}>Priver React</h1>
         </header>
         <main>
-            <p> </p>
+            <p >Hello {imja} </p>
         </main>
     </div>
 );
