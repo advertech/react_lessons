@@ -30,6 +30,8 @@ const alertHello = () => (
     alert("HEllo It's Allert function")
 )
 
+
+// ELEMENT
 const renderJSX = (
     <div>
         <header>
@@ -42,4 +44,26 @@ const renderJSX = (
     </div>
 );
 
-ReactDOM.render(renderJSX, document.getElementById('root'))
+
+
+// Component
+
+const Hello = props => <p style={red}>Hello {props.name} </p>;
+
+const RenderJSX = () => (
+    <div>
+        <header>
+            <img className='logo' src="logo.svg" alt="ReactLogo" />
+            <h1 onClick={alertHello}>Priver React</h1>
+        </header>
+        <main>
+            <Hello name="Masha" />
+            <p> Abra Cadabra I tak Dalee</p>
+            <Hello name="MAX ALEX" />
+            <Hello name="John">
+        </main>
+    </div>
+);
+
+
+ReactDOM.render(<RenderJSX />, document.getElementById('root'))
