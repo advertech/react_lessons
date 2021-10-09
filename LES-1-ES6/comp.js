@@ -43,7 +43,8 @@ class RenderJSX extends React.Component {
                     <h1> Hello REACT</h1>
                 </header>
                 <main>
-                    <button style={button} onClick={this.changeCounter}>{this.state.counter}</button>
+                    {/*  работает с первым способом <button style={button} onClick={this.changeCounter}>{this.state.counter}</button> */}
+                    <button style={button} onClick={() => this.changeCounter()}>{this.state.counter}</button>
                     <p>Same code on JSX [advertech]</p>
                     <Hello name="Maks" />
                     <Hello name="Samanta" />
