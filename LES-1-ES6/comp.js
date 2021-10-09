@@ -30,9 +30,11 @@ class RenderJSX extends React.Component {
     }
 
     // пишем метод 
-    changeCounter() {
+    changeCounter = () => {
         console.log(this);
-        this.state.counter += 1;
+        this.setState({
+            counter: this.state.counter + 1
+        })
     }
 
     render() {
@@ -43,10 +45,12 @@ class RenderJSX extends React.Component {
                     <h1> Hello REACT</h1>
                 </header>
                 <main>
-                    {/*  работает с первым способом <button style={button} onClick={this.changeCounter}>{this.state.counter}</button> */}
-                    <button style={button} onClick={() => this.changeCounter()}>{this.state.counter}</button>
+                    {
+                    /*  работает с первым способом <button style={button} onClick={this.changeCounter}>{this.state.counter}</button> */}
+                    <button style={button} onClick={this.changeCounter}>{this.state.counter}</button>
                     <p>Same code on JSX [advertech]</p>
                     <Hello name="Maks" />
+                    <button style={button} onClick={this.changeCounter}>{this.state.counter}</button>
                     <Hello name="Samanta" />
                     <Hello name="John" />
                 </main>
