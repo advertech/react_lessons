@@ -56,6 +56,6 @@ const makeBusiness2 = (director, teacher, allModule, gang, course) => {
 
 }
 
-
+//изменения для теста LES1
 makeBusiness.apply(null, ['Артем', null, lesson, command, nameCourse]);
 makeBusiness2.apply(null, ['Артем', null, lesson, command, nameCourse]);
