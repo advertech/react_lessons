@@ -17,45 +17,32 @@ const button = {
 
 const Hello = props => <p style={red} onClick={allertHelo}>Hello {props.name}</p>;
 
-class RenderJSX extends React.Component {
+function RenderJSX() {
 
-    //создаем счетчик
-    constructor() {
-        super();
-        this.state = {
-            counter: 0
-        }
-        // Обращаемся к методу и присваемыем ему наш THIS
-        // this.changeCounter = this.changeCounter.bind(this)
-    }
+    const [count, changeCount] = React.useState(0)
 
-    // пишем метод 
-    changeCounter = () => {
-        console.log(this);
-        this.setState({
-            counter: this.state.counter + 1
-        })
-    }
 
-    render() {
-        return (
-            <div>
-                <header>
-                    <img className="logo" src="logo.svg" alt="react logo" />
-                    <h1> Hello REACT</h1>
-                </header>
-                <main>
-                    {
-                    /*  работает с первым способом <button style={button} onClick={this.changeCounter}>{this.state.counter}</button> */}
-                    <button style={button} onClick={this.changeCounter}>{this.state.counter}</button>
-                    <p>Same code on JSX [advertech]</p>
-                    <Hello name="Maks" />
-                    <button style={button} onClick={this.changeCounter}>{this.state.counter}</button>
-                    <Hello name="Samanta" />
-                    <Hello name="John" />
-                </main>
-            </div>)
-    }
+
+
+
+    return (
+        <div>
+            <header>
+                <img className="logo" src="logo.svg" alt="react logo" />
+                <h1> Hello REACT</h1>
+            </header>
+            <main>
+
+
+                <button style={button} onClick={() => changeCount(count + 1)}>{count}</button>
+                <p>Same code on JSX [advertech]</p>
+                <Hello name="Maks" />
+
+                <Hello name="Samanta" />
+                <Hello name="John" />
+            </main>
+        </div>)
+
 }
 
 
